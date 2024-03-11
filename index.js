@@ -5,6 +5,7 @@ const cors = require("cors");
 
 const allowedOrigins = [
   "http://localhost:3000",
+  "https://main.dx9c8yaevt53o.amplifyapp.com"
   // Add more origins as needed
 ];
 
