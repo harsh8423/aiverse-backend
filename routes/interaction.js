@@ -4,7 +4,7 @@ const interactions = require("../models/interactionSchema");
 
 router.post("/addInteraction", async (req, res) => {
     try {
-        const {name,mediaSource,appName,industry,pattern,videoUrl,gifUrl, images, content, urlSlug} = req.body;
+        const {name,mediaSource,appName,industry,pattern,videoUrl,gifUrl, images, content,iconUrl} = req.body;
 
         const newInteraction = new interactions({
             name:name,
@@ -15,8 +15,8 @@ router.post("/addInteraction", async (req, res) => {
             videoUrl:videoUrl,
             gifUrl:gifUrl,
             images:images,
-            urlSlug:urlSlug,
             content:content,
+            iconUrl:iconUrl,
             status:'new',
             uploadDate:Date.now(),
           });
@@ -41,20 +41,15 @@ router.get("/getInteraction", async (req, res) => {
       const data = await interactions.find({})
       if(data){
         res.json({ success:true, data});
-      }
-        
+      }     
       }catch (err) {
       console.log(err)
         res.json({ success:false});
     }
 });
-
-
 router.post("/getAll", async (req, res) => {
   try {
-
-    const {id}= req.body
-
+      const {id}= req.body
       const data = await interactions.find({})
       if(data){
         console.log(data)
