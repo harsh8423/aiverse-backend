@@ -69,7 +69,7 @@ router.post("/getAll", async (req, res) => {
 
 router.post("/editInteraction", async (req, res) => {
   try {
-      const {id,name,mediaSource,appName,industry,pattern,videoUrl,gifUrl, images, content, urlSlug} = req.body;
+      const {id,name,mediaSource,appName,industry,pattern,videoUrl,gifUrl, images, content, iconUrl} = req.body;
 
       const editInteraction = await interactions.findById(id)
 
@@ -83,7 +83,7 @@ router.post("/editInteraction", async (req, res) => {
         editInteraction.videoUrl=videoUrl,
         editInteraction.gifUrl=gifUrl,
         editInteraction.images=images,
-        editInteraction.urlSlug=urlSlug,
+        editInteraction.iconUrl=iconUrl,
         editInteraction.content=content,
         editInteraction.status='updated'
     }
