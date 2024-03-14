@@ -1,6 +1,6 @@
 const mongoose = require("mongoose");
 const { Schema } = mongoose;
-mongoose.connect('mongodb+srv://dilsecricket1:8423047004@cluster0.lg8qhk8.mongodb.net/AIverse',)
+mongoose.connect('mongodb+srv://kagrawal16:F9cpPvZrx8zcyD8S@cluster0.jtq1apr.mongodb.net/aiverse',)
 .then(()=>{
     console.log("connection open !!")
 })
